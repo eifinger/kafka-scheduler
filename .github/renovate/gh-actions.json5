@@ -1,0 +1,22 @@
+{
+  packageRules: [
+    // This groups all GHA minor and patch versions into one pull request
+    {
+      matchManagers: ["github-actions"],
+      description: "Update Github Actions",
+      groupName: "github-actions",
+      matchUpdateTypes: ["minor", "patch"],
+      group: { commitMessageTopic: "{{{groupName}}} group" },
+    },
+    // Disable minor and patch versions for dependencies
+    {
+      matchManagers: ["github-actions"],
+      matchPackageNames: ["renovatebot/github-action"],
+      matchUpdateTypes: ["minor", "patch"],
+      enabled: false
+    }
+  ],
+  "github-actions": {
+    enabled: true,
+  }
+}

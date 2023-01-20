@@ -1,0 +1,24 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  // Extensions
+  extends: [
+    "config:base",
+    ":disableRateLimiting",
+    ":disableDependencyDashboard",
+    ":semanticCommits",
+    "github>eifinger/kafka-scheduler//.github/renovate/labels.json5",
+    "github>eifinger/kafka-scheduler//.github/renovate/gh-actions.json5",
+    "github>eifinger/kafka-scheduler//.github/renovate/pre-commit.json5"
+  ],
+  // Renovate config
+  onboarding: false,
+  platform: "github",
+  includeForks: false,
+  automerge: false,
+  // Git config
+  username: "renovate[bot]",
+  gitAuthor: "Renovate Bot <bot@renovateapp.com>",
+  branchPrefix: "renovate/",
+  rebaseWhen: "conflicted",
+  branchConcurrentLimit: 0,
+}

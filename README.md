@@ -1,6 +1,6 @@
 # kafka-scheduler
 
-A scalable, distributed kafka message scheduler with only a Kafka cluster as a dependency.
+A scalable, distributed Kafka message scheduler with only a Kafka cluster as a dependency.
 
 ## Why?
 
@@ -23,13 +23,13 @@ Why should I have to introduce a database into my stack if I can "just" stay wit
 
 ## How?
 
-kafka-scheduler lets you schedule kafka message with a desired key, value and headers and
+Kafka-scheduler lets you schedule a Kafka message with a desired key, value and headers and
 when you want to receive them on which topic. This way your application receives the message
 as a trigger and can execute the business logic on the desired schedule.
 
 ### OneTimeCommand
 
-A fire and forget command which will be triggered at a certain point in the future.
+A fire-and-forget command will be triggered at a certain point in the future.
 
 ```mermaid
 sequenceDiagram
@@ -45,7 +45,7 @@ sequenceDiagram
 
 |        Header         |                           Description                            |
 |:---------------------:|:----------------------------------------------------------------:|
-|  kafka-scheduler-key  | The kafka message key used as a unique id so it can be cancelled |
+| kafka-scheduler-key   | The kafka message key used as a unique id so it can be cancelled |
 | kafka-scheduler-value |         The Kafka message value you want to receive back         |
 | kafka-scheduler-when  |                 A ISO-6801 configured Timestamp                  |
 
@@ -78,9 +78,9 @@ sequenceDiagram
 
 |        Header         |                           Description                            |
 |:---------------------:|:----------------------------------------------------------------:|
-|  kafka-scheduler-key  | The kafka message key used as a unique id so it can be cancelled |
+| kafka-scheduler-key   | The kafka message key used as a unique id so it can be cancelled |
 | kafka-scheduler-value |         The Kafka message value you want to receive back         |
-| kafka-scheduler-cron  |        A cron expression with [extended syntax support]()        |
+| kafka-scheduler-cron  |        A cron expression with extended syntax support]           |
 
 #### Key and Value
 
@@ -111,7 +111,7 @@ sequenceDiagram
 
 |         Header         |                           Description                            |
 |:----------------------:|:----------------------------------------------------------------:|
-|  kafka-scheduler-key   | The kafka message key used as a unique id so it can be cancelled |
+| kafka-scheduler-key    | The kafka message key used as a unique id so it can be cancelled |
 | kafka-scheduler-value  |         The Kafka message value you want to receive back         |
 | kafka-scheduler-period |                       A ISO-8601 Duration                        |
 
@@ -121,7 +121,6 @@ sequenceDiagram
 |-------|:----------------------------------------------------------------:|
 | Key   | The kafka message key used as a unique id so it can be cancelled |
 | Value |         The Kafka message value you want to receive back         |
-
 
 ### Cancelling Commands
 

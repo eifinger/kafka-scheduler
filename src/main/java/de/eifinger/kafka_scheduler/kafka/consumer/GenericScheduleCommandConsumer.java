@@ -212,4 +212,3 @@ public abstract class GenericScheduleCommandConsumer implements KafkaConsumerReb
         }
     }
 }
-
