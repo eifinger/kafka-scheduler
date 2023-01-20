@@ -1,0 +1,19 @@
+{
+  labels: ["dependencies"],
+  packageRules: [
+    {
+      matchManagers: ["github-actions"],
+      addLabels: ["github-actions"]
+    },
+    {
+      matchManagers: ["gradle", "maven"],
+      addLabels: ["java"]
+    },
+    // Major Label
+    {
+      matchUpdateTypes: ["major"],
+      addLabels: ["major"],
+      automerge: false
+    },
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  gradle: {
+    enabled: true,
+  },
+  maven: {
+    enabled: true,
+  }
+}

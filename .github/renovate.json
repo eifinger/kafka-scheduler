@@ -1,0 +1,7 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "github>eifigner/kafka-scheduler//.github/renovate/baseline.json5",
+    "github>eifigner/kafka-scheduler//.github/renovate/java.json5"
+  ]
+}
