@@ -124,7 +124,19 @@ sequenceDiagram
 
 ### Cancelling Commands
 
-TBD
+All commands can be cancelled by sending a Kafka tombstone message
+with the same key which was used to schedule the command.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    note right of Application: Topic: one-time-commands<br>Headers<br>kafka-scheduler-key: myKey<br>kafka-scheduler-topic: mytopic<br>kafka-scheduler-when:2011-12-03T10:15:30+01:00
+    Application->>Kafka-Scheduler: key:value
+    Kafka-Scheduler->>Kafka-Scheduler: Schedule
+    note right of Application: Topic: one-time-commands<br>Headers
+    Application->>Kafka-Scheduler: key:null
+    Kafka-Scheduler->>Kafka-Scheduler: Cancel scheduled command
+```
 
 ## Client SDK
 
@@ -133,3 +145,17 @@ TBD
 ## Detailed Documentation
 
 TBD
+
+# Other Kafka scheduler implementations
+
+[kafka-message-scheduler](https://github.com/etf1/kafka-message-scheduler) -
+Awesome implementation by [@etf](https://github.com/etf) in Go. Only supports OneTimeCommands but has
+memory optimizations and an [Admin UI](https://github.com/etf1/kafka-message-scheduler-admin).
+
+[high-available-task-scheduling](https://github.com/cbenaveen/high-available-task-scheduling) -
+Implementation by [@cbenaveen](https://github.com/cbenaveen) using Kafka Streams.
+
+# Acknowledgements
+
+[@rdehuyss](https://github.com/rdehuyss) for creating [JobRunr](https://github.com/jobrunr/jobrunr)
+the easiest to use scheduling library in the JVM space.
