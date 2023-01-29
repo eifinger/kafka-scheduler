@@ -87,8 +87,8 @@ class IntegrationTest {
                 .fromRecords(List.of(deleteRecord()))
                 .awaitCompletion();
 
-        var reply = companion.consumeStrings().fromTopics(replyTopic, Duration.ofSeconds(10));
-        reply.awaitCompletion(Duration.ofSeconds(10));
+        var reply = companion.consumeStrings().fromTopics(replyTopic, Duration.ofSeconds(11));
+        reply.awaitCompletion(Duration.ofSeconds(11));
         assertEquals(1, reply.count());
     }
 

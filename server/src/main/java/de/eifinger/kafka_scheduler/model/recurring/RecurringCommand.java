@@ -10,7 +10,7 @@ import java.util.Objects;
 public record RecurringCommand(String id, String topic, byte[] key, byte[] value, Headers headers,
                                String cron) implements ScheduleCommand, JobRequest {
 
-    public static final String CRON = "cron";
+    public static final String CRON = "kafka-scheduler-cron";
     @Override
     public String toString() {
         return "RecurringCommand{" +
